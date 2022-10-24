@@ -1,12 +1,16 @@
 import './ExpenseItem.css'
-export default function ExpenseItem() {
-  return (
-    <div className='expense-item'>
-      <div>March 28th 2021</div>
+
+export default function ExpenseItem(props) {
+  console.log(props);
+
+  return <> {props.arr.map((data)=>{
+     return <div className='expense-item'>
+      <div>{data.date}</div>
       <div className='expense-item__description'>
-        <h2>Car Insurance</h2>
-        <div className='expense-item__price'>$294.67</div>
+        <h2>{data.title}</h2>
+        <div className='expense-item__price'>${data.amount}</div>
       </div>
     </div>
-  );
+  })}
+  </>;
 }
