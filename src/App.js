@@ -1,6 +1,6 @@
 import './App.css';
 import {useState, useEffect} from 'react';
-import ExpenseItem from './components/ExpenseItem'
+import ExpenseItem from './components/expenses/ExpenseItem'
 function App() {
   const [arr, setArr] = useState([]);
   useEffect(() => {
