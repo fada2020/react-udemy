@@ -1,11 +1,15 @@
 import './App.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import ExpenseItem from './components/ExpenseItem'
 function App() {
-  const [arr, setArr] = useState([ {id:'el1', title: 'ABC', amount: 2000, date:'2022-01-14'},
-  {id:'el2', title: 'DEF', amount: 3000, date:'2022-01-15'},
-  {id:'el3', title: 'GHI', amount: 4000, date:'2022-01-16'},
-  {id:'el4', title: 'JKL', amount: 5000, date:'2022-01-17'}]);
+  const [arr, setArr] = useState([]);
+  useEffect(() => {
+    fetch(`http://혁주.kro.kr/open/api/v1/all`)
+      .then(res => res.json())
+      .then(res => {
+        setArr(res);
+    });      
+  }, []);
 
   return (
     <div className="App">
