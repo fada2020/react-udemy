@@ -1,8 +1,9 @@
 import './ExpenseItem.css'
+import Card from './Card'
 import ExpenseDate from './ExpenseDate'
 export default function ExpenseItem(props) {
-
-  return <> {props.arr.map((data)=>{
+    console.log(props.arr);
+  return <Card> {props.arr.map((data)=>{
      return <div className='expense-item' key={data.id}>
       <div>
       <ExpenseDate data={data.createdDate}/>
@@ -13,5 +14,5 @@ export default function ExpenseItem(props) {
       </div>
     </div>
   })}
-  </>;
+  </Card>;
 }
