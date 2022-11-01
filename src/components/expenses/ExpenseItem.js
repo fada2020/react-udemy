@@ -2,7 +2,6 @@ import './ExpenseItem.css'
 import Card from '../UI/Card'
 import ExpenseDate from './ExpenseDate'
 export default function ExpenseItem(props) {
-    console.log(props.arr);
   return <Card> {props.arr.map((data)=>{
      return <div className='expense-item' key={data.id}>
       <div>
