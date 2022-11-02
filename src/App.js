@@ -1,6 +1,7 @@
 import './App.css';
 import {useState, useEffect} from 'react';
-import ExpenseItem from './components/expenses/ExpenseItem'
+import ExpenseItem from './components/expenses/ExpenseItem.js';
+import NewExpense from './components/newExpense/NewExpense.js';
 function App() {
   const [arr, setArr] = useState([]);
   useEffect(() => {
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-     <h2>Let's just started.</h2>
+     <NewExpense/>
       <ExpenseItem arr={arr}/>
     </div>
   );
